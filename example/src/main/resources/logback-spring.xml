@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <contextName>domain</contextName>
+    <property name="pattern" value="%yellow(%d{yyyy-MM-dd HH:mm:ss.SSS}) [%thread] %highlight(%-5level) %green(%logger{50}) - %highlight(%msg) %n"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${pattern}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+    <logger name="org.springframework" level="debug">
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <root level="debug">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>
+
